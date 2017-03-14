@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Startup Matchmaker</title>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:700|Merriweather:700,700italic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="container clearfix">
+      <h1>London Train Times</h1>
+      <nav>
+      <input type="text" name="Station search">
+      </nav>
+    </div>
+  </header>
+
+  <!-- the below will be a map with pins on them with train/tube stations outside of zone 1 - so will be a lot of them and should be provided by the API. -->
+  <section class="map">
+    <div id="map" style="width:1024px;height:400px">
+    <img src="./images/pin.png" id="pin0" alt="station name" height="30" width="auto">
+    <p id="station0">station name</p>
+  </section>
+
+<!-- the below section will be an overlay/popup which appears once you click on the above pin, with information about train journey time. The amount of table rows will depend on API -->
+  <section class="info">
+  <div class="overlay">
+    <p>close (x)</p>
+    <h2>Station name</h2>
+    <table>
+      <tr>
+        <th scope="col">Destination</th>
+        <th scope="col">Fastest time</th>
+        <th scope="col">Frequency</th>
+      </tr>
+      <tr id="row0">
+        <td>Station</td>
+        <td>Minutes</td>
+        <td>Number</td>
+      </tr>
+    </table>
+  </div>
+  </section>
+
+
+  <footer>
+    <div class="footer">
+      <span>London Train Times</span>
+    </div>
+  </footer>
+
+</body>
+</html>

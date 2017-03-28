@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>London train times</title>
+<<<<<<< HEAD
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:700|Merriweather:700,700italic' rel="stylesheet" type="text/css">
+=======
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+>>>>>>> gt-pages
 
   <link rel="stylesheet" href="./normalize.css">
   <link rel="stylesheet" href="./styles.css">
@@ -12,9 +16,14 @@
 
   <header>
     <div class="container">
-      <h1>London Train Times</h1>
+      <h1 class="logo">London Train Times</h1>
       <nav>
-      <input type="text" name="Station search">
+      <form id="search">
+      <label>Search for station</label>
+      <br>
+       <input type="text" name="Station search">
+       <button>Go</button>
+      </form>
       </nav>
     </div>
   </header>
@@ -22,14 +31,16 @@
   <!-- the below will be a map with pins on them with train/tube stations outside of zone 1 - so will be a lot of them and should be provided by the API. -->
   <section class="map">
     <div id="map">
+<<<<<<< HEAD
     <img src="./pin1.png" id="pin0" alt="station name" height="30" width="auto">
+=======
+    <img class="pin" src="./pin1.png" alt="station name">
+>>>>>>> gt-pages
     <p id="station0">station name</p>
-  </section>
-
-<!-- the below section will be an overlay/popup which appears once you click on the above pin, with information about train journey time. The amount of table rows will depend on API -->
-  <section class="info">
-  <div class="overlay">
-    <p>close (x)</p>
+    </div>
+    <!-- the below section will be an overlay/popup which appears once you click on the above pin, with information about train journey time. The amount of table rows will depend on API -->
+      <div class="overlay">
+    <p class="close">close (x)</p>
     <h2>Station name</h2>
     <table>
       <tr>
@@ -45,6 +56,8 @@
     </table>
   </div>
   </section>
+
+
 
   <footer>
     <div class="footer">

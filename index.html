@@ -14,40 +14,519 @@
     <div class="container">
       <h1 class="logo">London Train Times</h1>
       <nav>
-      <form id="search">
-      <label>Search for station</label>
-      <br>
-       <input type="text" name="Station search">
-       <button>Go</button>
+        <form id="search">
+         <label>Search for a station</label>
+         <br>
+        <input type="text" id="myInput" onfocus="myFunction()" focusout="myFunction()" onkeyup="myFunction()" name="Station search">
+        <button class="searchCTA">Go</button>
+        <div class="table-wrapper">
+          <table id="myTable">
+          <tr>
+            <td>Acton Town</td>
+          </tr>
+          <tr>
+            <td>Beckenham Junction</td>
+          </tr>
+          <tr>
+            <td>Bethnal Green Rail</td>
+          </tr>
+          <tr>
+            <td>Colindale</td>
+          </tr>
+          <tr>
+            <td>Crystal Palace</td>
+          </tr>
+          <tr>
+            <td>Ealing Broadway</td>
+          </tr>
+          <tr>
+            <td>Feltham</td>
+          </tr>
+          <tr>
+            <td>Hampstead</td>
+          </tr>
+          <tr>
+            <td>Isleworth</td>
+          </tr>
+          <tr>
+            <td>Lee</td>
+          </tr>
+          <tr>
+            <td>Mottingham</td>
+          </tr>
+          <tr>
+            <td>North Wembley</td>
+          </tr>
+          <tr>
+            <td>Palmers Green</td>
+          </tr>
+          <tr>
+            <td>Putney</td>
+          </tr>
+          <tr>
+            <td>Royal Albert</td>
+          </tr>
+          <tr>
+            <td>Shepherds Bush</td>
+          </tr>
+          <tr>
+            <td>Stratford</td>
+          </tr>
+          <tr>
+            <td>Streatham</td>
+          </tr>
+          <tr>
+            <td>West Finchley</td>
+          </tr>
+          <tr>
+            <td>Woolwich Arsenal</td>
+          </tr>
+        </table>
+        </div>
+        </form>
+
       </form>
       </nav>
     </div>
   </header>
 
   <!-- the below will be a map with pins on them with train/tube stations outside of zone 1 - so will be a lot of them and should be provided by the API. -->
-  <section class="map">
+  <section class="main">
     <div id="map">
-    <img src="./pin1.png" id="pin0" alt="station name" height="30" width="auto">
-    <img class="pin" src="./pin1.png" alt="station name">
-    <p id="station0">station name</p>
     </div>
     <!-- the below section will be an overlay/popup which appears once you click on the above pin, with information about train journey time. The amount of table rows will depend on API -->
-      <div class="overlay">
-    <p class="close">close (x)</p>
-    <h2>Station name</h2>
-    <table>
-      <tr>
-        <th scope="col">Destination</th>
-        <th scope="col">Fastest time</th>
-        <th scope="col">Frequency</th>
-      </tr>
-      <tr id="row0">
-        <td>Station</td>
-        <td>Minutes</td>
-        <td>Number</td>
-      </tr>
-    </table>
-  </div>
+    <div class="overlay" data-station="Woolwich Arsenal">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">Woolwich Arsenal</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>22 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row1">
+          <td>London Cannon Street</td>
+          <td>29 minutes</td>
+          <td>5 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Bethnal Green Rail">
+      <button class="close">x</button>
+      <span class="zone">Zone 2</span>
+      <h2><img src="./station.png" class="stationicon">Bethnal Green Rail</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Liverpool Street</td>
+          <td>4 minutes</td>
+          <td>8 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Acton Town">
+      <button class="close">x</button>
+      <span class="zone">Zone 3</span>
+      <h2><img src="./station.png" class="stationicon">Acton Town</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>Earl's Court</td>
+          <td>11 minutes</td>
+          <td>18 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Beckenham Junction">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">Beckenham Junction</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Victoria</td>
+          <td>24 minutes</td>
+          <td>5 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London St Pancras International</td>
+          <td>34 minutes</td>
+          <td>1 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>42 minutes</td>
+          <td>1 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Colindale">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">Colindale</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Euston</td>
+          <td>21 minutes</td>
+          <td>17 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London King's Cross</td>
+          <td>22 minutes</td>
+          <td>11 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Crystal Palace">
+      <button class="close">x</button>
+      <span class="zone">Zone 3/4</span>
+      <h2><img src="./station.png" class="stationicon">Crystal Palace</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>24 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Victoria</td>
+          <td>30 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>Shoreditch High Street Rail Station</td>
+          <td>28 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+      </table>
+    </div>
+      <div class="overlay" data-station="Ealing Broadway">
+      <button class="close">x</button>
+      <span class="zone">Zone 3</span>
+      <h2><img src="./station.png" class="stationicon">Ealing Broadway</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London London Paddington</td>
+          <td>11 minutes</td>
+          <td>8 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>Notting Hill Gate</td>
+          <td>16 minutes</td>
+          <td>10 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>Earl's Court</td>
+          <td>19 minutes</td>
+          <td>6 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Feltham">
+      <button class="close">x</button>
+      <span class="zone">Zone 5</span>
+      <h2><img src="./station.png" class="stationicon">Feltham</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Waterloo</td>
+          <td>34 minutes</td>
+          <td>8 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Hampstead">
+      <button class="close">x</button>
+      <span class="zone">Zone 2/3</span>
+      <h2><img src="./station.png" class="stationicon">Hampstead</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Euston</td>
+          <td>9 minutes</td>
+          <td>18 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London King's Cross</td>
+          <td>11 minutes</td>
+          <td>12 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Isleworth">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">Isleworth</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Waterloo</td>
+          <td>40 minutes</td>
+          <td>5 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Lee">
+      <button class="close">x</button>
+      <span class="zone">Zone 3</span>
+      <h2><img src="./station.png" class="stationicon">Lee</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>14 minutes</td>
+          <td>3 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Cannon Street</td>
+          <td>27 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Charing Cross</td>
+          <td>28 minutes</td>
+          <td>3 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Mottingham">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">Mottingham</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>17 minutes</td>
+          <td>3 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Cannon Street</td>
+          <td>30 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Charing Cross</td>
+          <td>30 minutes</td>
+          <td>3 p/h</td>
+        </tr>
+      </table>
+    </div>
+      </table>
+    </div>
+      <div class="overlay" data-station="North Wembley">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">North Wembley</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Paddington</td>
+          <td>22 minutes</td>
+          <td>5 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Euston</td>
+          <td>28 minutes</td>
+          <td>8 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Palmers Green">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">Palmers Green</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>Old Street</td>
+          <td>25 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Moorgate</td>
+          <td>29 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+      </table>
+    </div>
+        <div class="overlay" data-station="Putney">
+      <button class="close">x</button>
+      <span class="zone">Zone 2/3</span>
+      <h2><img src="./station.png" class="stationicon">Putney</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Waterloo</td>
+          <td>17 minutes</td>
+          <td>10 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Royal Albert">
+      <button class="close">x</button>
+      <span class="zone">Zone 3</span>
+      <h2><img src="./station.png" class="stationicon">Royal Albert</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>Tower Gateway</td>
+          <td>21 minutes</td>
+          <td>8 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Shepherds Bush">
+      <button class="close">x</button>
+      <span class="zone">Zone 2</span>
+      <h2><img src="./station.png" class="stationicon">Shepherds Bush</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>Nothing Hill Gate</td>
+          <td>4 minutes</td>
+          <td>18 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="Stratford">
+      <button class="close">x</button>
+      <span class="zone">Zone 3</span>
+      <h2><img src="./station.png" class="stationicon">Stratford</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Liverpool Street</td>
+          <td>10 minutes</td>
+          <td>18 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>16 minutes</td>
+          <td>17 p/h</td>
+        </tr>
+      </table>
+    </div>
+      <div class="overlay" data-station="Streatham">
+      <button class="close">x</button>
+      <span class="zone">Zone 3</span>
+      <h2><img src="./station.png" class="stationicon">Streatham</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Bridge</td>
+          <td>26 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London St Pancras International</td>
+          <td>33 minutes</td>
+          <td>4 p/h</td>
+        </tr>
+      </table>
+    </div>
+    <div class="overlay" data-station="West Finchley">
+      <button class="close">x</button>
+      <span class="zone">Zone 4</span>
+      <h2><img src="./station.png" class="stationicon">?</h2>
+      <table>
+        <tr>
+          <th scope="col">Destination</th>
+          <th scope="col">Fastest time</th>
+          <th scope="col">Frequency</th>
+        </tr>
+        <tr id="row0">
+          <td>London Euston</td>
+          <td>20 minutes</td>
+          <td>17 p/h</td>
+        </tr>
+        <tr id="row0">
+          <td>London King's Cross</td>
+          <td>22 minutes</td>
+          <td>9 p/h</td>
+        </tr>
+      </table>
+    </div>
   </section>
 
 
@@ -58,5 +537,10 @@
     </div>
   </footer>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+ <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQXLu7Yoysfh9m7FedytBqrKxsWfE8S5U&callback=initMap">
+    </script>
 </body>
 </html>

@@ -8,6 +8,7 @@
   -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
   box-sizing: border-box; /* IE */
   font-family: 'Ubuntu', sans-serif;
+  
 }
 
 .clearfix:after {
@@ -37,14 +38,65 @@ header {
 	margin-top: 10px;
 }
 
-#map {
-	width: 1024px;
-	height: 400px;
+#myInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 220px;
+  font-size: 14px;
+  padding: 12px 20px 12px 10px;
+  border: 1px solid #ddd;
+  height: 25px;
+  border-width: 0px;
+  margin: 0px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 220px;
+  border: 1px solid #ddd;
+  color: black;
+  background-color: white;
+}
+
+.table-wrapper {
+	display: none;
+	height: 480px;
+	overflow-y: auto;
+	position: absolute;
+	z-index: 10;
+	width: 220px;
+}
+
+body {
+	overflow: hidden;
+}
+
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.main {
+	position: relative;
 }
 
 .pin {
 	height: 30px;
 	width: auto;
+}
+
+nav table {
+	margin: 5px 0px 10px;
 }
 
 footer {
@@ -56,7 +108,7 @@ footer {
 	font-size: 12px;
 }
 
-button {
+header button {
 	width: auto;
 	background-color: #FFBF47;
 	border-style: none;
@@ -65,19 +117,72 @@ button {
 	height: 26px;
 }
 
-input {
-	border-width: 0px;
-	height: 25px;
-}
 
 .overlay {
-	background-color: rgba(195,195,195,0.8);
-	border-radius: 10px;
+	background-color: white;
+	border-radius: 5px;
+	display: none;
 	margin-left: auto;
-	width: 325px;
+	width: auto;
+	position: absolute; top: 50px; left: 20px; z-index: 5;
+ 	border: 1px solid grey;
+ 	box-shadow: 5px 5px 3px #888888;
+ 	padding: 5px 0px 10px;
 }
 
 .close {
- 	text-align: right;
- 	padding: 5px;
+ 	float: right;
+ 	background-color: rgba(220,220,220,0);
+ 	border-radius: 11px;
+ 	border-style: none;
+ 	font-size: 18px;
+}
+
+.zone {
+	padding: 10px;
+	color: blue;
+}
+
+#map {
+	width: 100%;
+	height: 525px;
+	padding: 0px;
+}
+
+h2 {
+	margin: 10px; 
+}
+
+th, td {
+	padding: 4px 10px;
+	text-align: left;
+}
+
+h2 table {
+	margin: 20px 0px 10px;
+}
+
+th {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+td {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.stationicon {
+	height: 30px;
+	width: auto;
+	margin: 0 15px;
+}
+
+#search li {
+	list-style: none;
+}
+
+.typeahead_result {
+	background-color: yellow;
+
 }
